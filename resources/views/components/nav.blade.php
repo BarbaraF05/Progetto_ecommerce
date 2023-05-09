@@ -12,11 +12,12 @@
             <a class="nav-link" href="{{route('register')}}">Registrati</a>
           @else
             <a class="nav-link" href="#">{{Auth::user()->name}}</a>
+            <a class="nav-link" href="{{route('announcementCreate')}}">Inserisci annuncio</a> 
             <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
                   @csrf
                 </form>
-                <a class="nav-link" href="{{route('announcementCreate')}}">Inserisci annuncio</a> 
+                
           @endguest
         </div>
       </div>

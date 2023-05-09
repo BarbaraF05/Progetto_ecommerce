@@ -11,13 +11,34 @@ class AnnouncementCreate extends Component
     public $price;
     public $body;
 
+    protected $rules = [
+        'title' => 'required|min:4',
+        'body' => 'required|min:8',
+        'price' => 'required|numeric',
+    ];
+
+    protected $messages=[
+        'required'=>'Il campo :attribute è richiesto',
+        'min'=>'Il campo :attribute è troppo corto',
+        'numeric'=>'Il campo :attribute dev\'essere un numero'
+    ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function announcementCreate() {
+
+        $validatedData = $this->validate();
+
         Announcement::create([
             'title'=>$this->title,
             'body'=>$this->body,
             'price'=>$this->price
         ]);
-        $this->clearForm();
+        session()->flash('message','Annuncio inserito con successo');
+        $this->cleanForm();
     }
     protected function cleanForm() {
         $this->title='';
