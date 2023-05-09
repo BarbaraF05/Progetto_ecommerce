@@ -16,6 +16,7 @@
                 <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
                   @csrf
                 </form>
+                <a class="nav-link" href="{{route('announcementCreate')}}">Inserisci annuncio</a> 
           @endguest
         </div>
       </div>
