@@ -10,4 +10,8 @@ class PublicController extends Controller
     public function welcome() {
         return view('welcome');
     }
+
+    public function announcementCreate(){
+        return view('announcement.announcementCreate');
+    }
 }
