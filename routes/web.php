@@ -15,4 +15,7 @@ use App\Http\Controllers\PublicController;
 */
 
 Route::get('/', [PublicController::class,'welcome'])->name('welcome');
-Route::get('/announcement/create', [PublicController::class,'announcementCreate'])->name('announcementCreate');
+
+Route::get('/announcement/create', [PublicController::class,'announcementCreate'])->middleware('auth')->name('announcementCreate');
+
+
