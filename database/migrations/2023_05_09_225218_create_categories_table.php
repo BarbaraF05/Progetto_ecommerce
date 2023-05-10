@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Category;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -18,12 +19,12 @@ return new class extends Migration
         });
         
         /* variabile contenente array di categorie. Da scegliere */
-            /* $categories=['Motori','Informatica','Sport','Accessori','Giochi','Arredamento'];*/
+            $categories=['Motori','Informatica','Sport','Accessori','Giochi','Arredamento','Abbigliamento','Libri','Bambini','Collezionismo'];
 
         /* per ogni category andiamo a creare un record nella tabella category */
-            /* foreach($categories as $category){
+            foreach($categories as $category){
             Category::create(['name'=>$category]);
-            } */
+            }
     } 
 
     

@@ -8,13 +8,14 @@
          @csrf
         <div class="mb-3">
             <label class="form-label">Titolo</label>
-            <input type="text" class="form-control " wire:model="title">
-            @error('title') <span class="error">{{ $message }}</span> @enderror
+            <input type="text" class="form-control @error('price') is-invalid @enderror" wire:model="text">
+            @error ('text') {{$message}} @enderror
         </div>
         <div class="mb-3">
             <label class="form-label d-block">Descrizione</label>
-            <textarea wire:model="body" type="text" col="30" rows="10"></textarea>
-            @error('body') <span class="error d-block"><p class="text-danger">{{ $message }}</p></span> @enderror
+            <textarea wire:model="body" type="text" col="30" rows="10" class="form-control @error('body') is-invalid @enderror">@error ('body') {{$message}} @enderror</textarea>
+            
+            
         </div>
         <div class="mb-3">
             <label class="form-label">Prezzo</label>
@@ -27,4 +28,3 @@
 
 </div>
 
-{{-- x ricordarmi: -il price fa diventare il controrno rosso che fa notare di più l'errore. -ho avuto l'idea di mettere il messaggio all'interno di un <p> cosi da poterlo mettere rosso --}}
