@@ -8,13 +8,13 @@
          @csrf
         <div class="mb-3">
             <label class="form-label">Titolo</label>
-            <input type="text" class="form-control @error('price') is-invalid @enderror" wire:model="text">
-            @error ('text') {{$message}} @enderror
+            <input type="text" class="form-control @error('title') is-invalid @enderror" wire:model="title">
+            @error ('title') {{$message}} @enderror
         </div>
         <div class="mb-3">
             <label class="form-label d-block">Descrizione</label>
-            <textarea wire:model="body" type="text" col="30" rows="10" class="form-control @error('body') is-invalid @enderror">@error ('body') {{$message}} @enderror</textarea>
-            
+            <textarea wire:model="body" type="text" col="30" rows="10" class="form-control @error('body') is-invalid @enderror"></textarea>
+            @error ('body') {{$message}} @enderror
             
         </div>
         <div class="mb-3">

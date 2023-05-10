@@ -6,7 +6,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
+          
+            <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
+          
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
+          
+          <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+            @foreach ($categories as $category)
+            <li><a class="dropdown-item" href="{{route('categoryShow', compact('category'))}}">{{($category->name)}}</a></li>
+            <li><hr class="dropdown-divider"></li>
+            @endforeach
+          </ul>
+          </li>
+        
           @guest
             <a class="nav-link" href="{{route('login')}}">Accedi</a>
             <a class="nav-link" href="{{route('register')}}">Registrati</a>

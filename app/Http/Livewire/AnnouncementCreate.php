@@ -41,8 +41,9 @@ class AnnouncementCreate extends Component
         $announcement = $category->announcements()->create([
             'title'=>$this->title,
             'body'=>$this->body,
-            'price'=>$this->price]);
-            Auth::user()->announcements()->save($announcements);
+            'price'=>$this->price
+        ]);
+            Auth::user()->announcements()->save($announcement);
 
         session()->flash('message','Annuncio inserito con successo');
         $this->cleanForm();

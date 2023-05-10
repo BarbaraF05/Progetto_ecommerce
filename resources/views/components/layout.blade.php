@@ -10,7 +10,7 @@
 </head>
 <body>
     <x-nav/>
-    <div class="min-vh-100">
+    <div class="min-vh-100 bg-page">
         {{$slot}}
     </div>
     <x-footer/>

@@ -18,4 +18,6 @@ Route::get('/', [PublicController::class,'welcome'])->name('welcome');
 
 Route::get('/announcement/create', [PublicController::class,'announcementCreate'])->middleware('auth')->name('announcementCreate');
 
+Route::get('/categoria/{category}', [PublicController::class,'categoryShow'])->name('categoryShow');
+
 
