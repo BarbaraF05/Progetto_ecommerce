@@ -8,6 +8,7 @@
         <div class="navbar-nav">
           
             <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{route('announcement.index')}}">Annunci</a>
           
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>

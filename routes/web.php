@@ -20,4 +20,7 @@ Route::get('/announcement/create', [PublicController::class,'announcementCreate'
 
 Route::get('/categoria/{category}', [PublicController::class,'categoryShow'])->name('categoryShow');
 
+Route::get('/dettaglio/annuncio/{announcement}', [PublicController::class,'showAnnouncement'])->name('announcement.show');
+
+Route::get('/tutti/annunci', [PublicController::class,'indexAnnouncement'])->name('announcement.index');
 

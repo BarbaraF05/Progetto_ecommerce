@@ -23,4 +23,13 @@ class PublicController extends Controller
     public function categoryShow(Category $category){
         return view('categoryShow', compact('category'));
     }
+
+    public function showAnnouncement(Announcement $announcement){
+        return view('announcement.show', compact('announcement'));
+    }
+
+    public function indexAnnouncement(){
+        $announcements=Announcement::paginate(6);
+        return view('announcement.index', compact('announcements'));
+    }
 }
