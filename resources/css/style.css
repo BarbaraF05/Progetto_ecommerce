@@ -1,6 +1,23 @@
 h1{
-    color: red;
+    color: var(--tot-c);
 }
-.bg-page{
-    background-color: #7EC8E3;
-}
+/* .bg-page{
+    background-color:;
+} */
+
+:root {
+    --tot-c: #050A30;
+    --main-c: #000C66;
+    --sec-c: #0000FF;
+    --acc-c: #7EC8E3;
+  }
+
+  .bg-nav{
+    background: linear-gradient(180deg, rgba(0,0,255,1) 15%, rgba(255,255,255,1) 100%);
+
+  }
+
+  .bg-form{
+    background-color:var(--acc-c);
+  }
+

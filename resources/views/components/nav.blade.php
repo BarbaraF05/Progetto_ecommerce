@@ -1,17 +1,16 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-nav text-style-decoration-white">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <a class="navbar-brand" href="#">
+        <img src="./img/Logo-Presto.png" alt="Logo" width="200" height="60" class="d-inline-block align-text-top">
+      </a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           
-            <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
-            <a class="nav-link active" aria-current="page" href="{{route('announcement.index')}}">Annunci</a>
+            <a class="nav-link active text-white" aria-current="page" href="{{route('welcome')}}">Home</a>
+            <a class="nav-link active text-white" aria-current="page" href="{{route('announcement.index')}}">Annunci</a>
           
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
+          <a class="nav-link dropdown-toggle text-white" href="" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
           
           <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
             @foreach ($categories as $category)
@@ -22,12 +21,12 @@
           </li>
         
           @guest
-            <a class="nav-link" href="{{route('login')}}">Accedi</a>
-            <a class="nav-link" href="{{route('register')}}">Registrati</a>
+            <a class="nav-link text-white" href="{{route('login')}}">Accedi</a>
+            <a class="nav-link text-white" href="{{route('register')}}">Registrati</a>
           @else
-            <a class="nav-link" href="#">{{Auth::user()->name}}</a>
-            <a class="nav-link" href="{{route('announcementCreate')}}">Inserisci annuncio</a> 
-            <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+            <a class="nav-link text-white" href="#">{{Auth::user()->name}}</a>
+            <a class="nav-link text-white" href="{{route('announcementCreate')}}">Inserisci annuncio</a> 
+            <a class="nav-link text-white" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
                   @csrf
                 </form>
