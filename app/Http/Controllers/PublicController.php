@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
-    /* rotta homepage */
+    /* rotta ANNUNCI */
     public function welcome() {
 
-        $announcements = Announcement::take(6)->get()->sortByDesc('created_at');
+        $announcements = Announcement::where('is_accepted',true)->take(6)->get()->sortByDesc('created_at');
         
         return view('welcome', compact('announcements'));
     }
@@ -20,16 +20,25 @@ class PublicController extends Controller
         return view('announcement.announcementCreate');
     }
 
-    public function categoryShow(Category $category){
-        return view('categoryShow', compact('category'));
-    }
-
     public function showAnnouncement(Announcement $announcement){
         return view('announcement.show', compact('announcement'));
     }
 
     public function indexAnnouncement(){
-        $announcements=Announcement::paginate(6);
+        $announcements=Announcement::where('is_accepted',true)->paginate(6);
         return view('announcement.index', compact('announcements'));
     }
+
+
+    /* fine rotta ANNUNCI */
+
+    /* rotta CATEGORIA */
+
+    public function categoryShow(Category $category){
+        return view('categoryShow', compact('category'));
+    }
+    /* fine rotta CATEGORIA */
+    
+
+    
 }

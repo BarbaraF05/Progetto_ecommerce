@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,13 @@ Route::get('/categoria/{category}', [PublicController::class,'categoryShow'])->n
 Route::get('/dettaglio/annuncio/{announcement}', [PublicController::class,'showAnnouncement'])->name('announcement.show');
 
 Route::get('/tutti/annunci', [PublicController::class,'indexAnnouncement'])->name('announcement.index');
+
+/* rotte revisore */
+Route::get('/revisor/home',[RevisorController::class,'index'])->middleware('isRevisor')->name('revisor.index');
+
+/* rotta accept */
+Route::patch('/accetta/annuncio/{announcement}',[RevisorController::class,'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.accept_announcement');
+
+/* rotta reject */
+Route::patch('/rifiuta/annuncio/{announcement}',[RevisorController::class,'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
 

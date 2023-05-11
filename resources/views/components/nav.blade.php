@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-nav text-style-decoration-white">
     <div class="container-fluid">
       <a class="navbar-brand" href="">
-        <img src="./img/logo-bianco.png" alt="Logo" width="90" height="80" class="d-inline-block align-text-top">
+        <img src="../../img/logo-bianco.png" alt="Logo" width="90" height="80" class="d-inline-block align-text-top">
       </a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
@@ -26,6 +26,15 @@
           @else
             <a class="nav-link text-white" href="#">{{Auth::user()->name}}</a>
             <a class="nav-link text-white" href="{{route('announcementCreate')}}">Inserisci annuncio</a> 
+            @if(Auth::user()->is_revisor)
+              <a href="{{route('revisor.index')}}" class="nav-link btn btn-outline-success btn-sm position-relative text-white" aria-current="page">
+              Zona revisore
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{App\Models\Announcement::toBeRevisionedCount()}}
+                <span class="visually-hidden">Da leggere</span>
+              </span>
+              </a>
+            @endif  
             <a class="nav-link text-white" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
                   @csrf

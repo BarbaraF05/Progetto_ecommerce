@@ -1,4 +1,7 @@
 <x-layout>
+    @if (session()->has('access.denied'))
+        <div class="flex flex-row justify-content-center text-center my-2 alert alert-danger">{{session('access.denied')}}</div>
+    @endif
     <div class="container-fluid p-5 shadow mb-4">
         <div class="row">
             <div class="col-12 p-5">
