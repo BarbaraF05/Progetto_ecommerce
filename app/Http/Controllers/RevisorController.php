@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BecomeRevisor;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
