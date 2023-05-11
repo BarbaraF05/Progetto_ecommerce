@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-nav text-style-decoration-white">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="./img/Logo-Presto.png" alt="Logo" width="200" height="60" class="d-inline-block align-text-top">
+      <a class="navbar-brand" href="">
+        <img src="./img/logo-bianco.png" alt="Logo" width="90" height="80" class="d-inline-block align-text-top">
       </a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           
             <a class="nav-link active text-white" aria-current="page" href="{{route('welcome')}}">Home</a>
-            <a class="nav-link active text-white" aria-current="page" href="{{route('announcement.index')}}">Annunci</a>
+            <a class="nav-link text-white" aria-current="page" href="{{route('announcement.index')}}">Annunci</a>
           
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>

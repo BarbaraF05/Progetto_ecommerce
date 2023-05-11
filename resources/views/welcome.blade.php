@@ -1,10 +1,14 @@
 <x-layout>
+    <div class="container-fluid p-5 shadow mb-4">
+        <div class="row">
+            <div class="col-12 p-5">
+                <h1 class="display-2 text-center fw-bold">Presto.it</h1>
+                <p class="h2 my-2 fw-bold text-center">Ecco i nostri annunci più recenti</p>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
-                <h1>Presto.it</h1>
-                <p class="h2 my-2 fw-bold">Ecco i nostri annunci più recenti</p>
-            </div>
             @foreach ($announcements as $announcement)
             <div class="col-12 col-md-4 my-4">
                 <div class="card shadow" style="width: 18rem;">
