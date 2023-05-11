@@ -21,6 +21,10 @@ h1{
     background-color:var(--acc-c);
   }
 
+  .bg-footer{
+    background-color:var(--tot-c);
+  }
+
   .btn-register{
     /* font-family: 'Rajdhani', sans-serif; */
     font-weight: 100;
