@@ -17,8 +17,8 @@
                       <h5 class="card-title">Titolo: {{$announcement->title}}</h5>
                       <p class="card-text">Descrizione: {{$announcement->body}}</p>
                       <p class="card-text">Prezzo: {{$announcement->price}}€</p>
-                      <a href="{{route('announcement.show', compact('announcement'))}}" class="btn btn-primary shadow">Visualizza</a>
-                      <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="btn btn-success shadow my-2 border-top pt-2 border-dark card-link">Categoria: {{$announcement->category->name}}</a>
+                      <a href="{{route('announcement.show', compact('announcement'))}}" class="btn btn-visualizza shadow fw-bold">Visualizza</a>
+                      <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="btn btn-category shadow my-3 fw-bold pt-2 card-link">Categoria: {{$announcement->category->name}}</a>
                       <p class="card-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
                     </div>
                 </div>

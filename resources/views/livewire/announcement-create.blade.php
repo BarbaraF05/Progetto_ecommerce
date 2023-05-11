@@ -6,25 +6,25 @@
 
     <form wire:submit.prevent="announcementCreate">
          @csrf
-        <div class="mb-3">
+        <div class="mb-3 w-50 mx-auto">
             <label class="form-label">Titolo</label>
             <input type="text" class="form-control @error('title') is-invalid @enderror" wire:model="title">
             @error ('title') {{$message}} @enderror
         </div>
-        <div class="mb-3">
+        <div class="mb-3 w-50 mx-auto">
             <label class="form-label d-block">Descrizione</label>
             <textarea wire:model="body" type="text" col="30" rows="10" class="form-control @error('body') is-invalid @enderror"></textarea>
             @error ('body') {{$message}} @enderror
             
         </div>
-        <div class="mb-3">
+        <div class="mb-3 w-50 mx-auto">
             <label class="form-label">Prezzo</label>
             <input type="decimal" class="form-control @error('price') is-invalid @enderror" wire:model="price">
             @error ('price') {{$message}} @enderror
             {{-- @error('price') <span class="error">{{ $message }}</span> @enderror --}}
         </div>
-        <div class="mb-3">
-            <label for="category">Categoria</label>
+        <div class="mb-3 w-50 mx-auto">
+            <label for="category" class="mb-2">Categoria</label>
             <select wire:model.defer="category" id="category" class="form-control">
                 <option value="">Scegli la categoria</option>
                 @foreach ($categories as $category)
@@ -35,7 +35,7 @@
             </select>
 
         </div>
-        <button type="submit" class="btn btn-primary">Aggiungi</button>
+        <button type="submit" class="btn btn-register fw-bold">Aggiungi</button>
     </form>
 {{-- ciao --}}
 </div>

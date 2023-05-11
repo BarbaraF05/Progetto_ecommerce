@@ -21,3 +21,34 @@ h1{
     background-color:var(--acc-c);
   }
 
+  .btn-register{
+    /* font-family: 'Rajdhani', sans-serif; */
+    font-weight: 100;
+    font-size: 20px;
+    color: var(--sec-c);
+    background: none;
+    border: 3px solid var(--sec-c);
+  }
+
+  .btn-visualizza{
+    /* font-family: 'Rajdhani', sans-serif; */
+    font-weight: 100;
+    font-size: 20px;
+    color: var(--tot-c);
+    background: none;
+    border: 3px solid var(--tot-c);
+  }
+
+  .btn-category{
+    /* font-family: 'Rajdhani', sans-serif; */
+    font-weight: 100;
+    font-size: 20px;
+    color: green;
+    background: none;
+    border: 3px solid green;
+  }
+
+  .search-input-nav {
+    background-color: transparent !important; 
+    border-bottom: 2px solid var(--sec-c)  !important;
+  }
