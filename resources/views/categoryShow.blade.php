@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
            <div class="col-12">
-            <h1 class="text-center">
+            <h1 class="text-center text-pr m-4">
                 Esplora la categoria {{$category->name}}
             </h1>
            </div>
@@ -21,12 +21,10 @@
                     </div>
                 </div>
                 @empty    
-                <div class="col-12">
-                    <p class="h1 text-sec">Non sono presenti annunci per questa categoria!</p>
-                    <p class="h2 text-sec">Pubblicane uno: <a href="{{route('announcementCreate')}}" class="btn btn-success shadow">Nuovo Annuncio</a></p>
+                <div class="col-12 mt-4">
+                    <p class="h2 text-sec text-center">Non sono presenti annunci per questa categoria!</p>
+                    <p class="text-sec text-center m-3"><a href="{{route('announcementCreate')}}" class="btn btn-success shadow text-sec">Nuovo Annuncio</a></p>
                 </div>
-                
-                    
                 @endforelse
             </div>
            </div>
