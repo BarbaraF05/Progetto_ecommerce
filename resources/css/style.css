@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Serif:wght@400;700&display=swap');
+
+.text-pr{
+  font-family: 'Noto Serif', serif;
+}
+.text-sec{
+  font-family: 'Lato', sans-serif;
+}
+
 h1{
     color: var(--tot-c);
 }
@@ -55,4 +64,12 @@ h1{
   .search-input-nav {
     background-color: transparent !important; 
     border-bottom: 2px solid var(--sec-c)  !important;
+  }
+
+  .bg-img{
+    background-image: url(https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80);
+    background-size: cover;
+    background-position: center;
+   
+
   }
