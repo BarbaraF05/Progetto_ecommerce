@@ -31,11 +31,11 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                <h5 class="card-title">Titolo: {{$announcement->title}}</h5>
-                <p class="card-text">Descrizione: {{$announcement->body}}></p>
-                <p class="card-text">Prezzo: {{$announcement->price}}€></p>
-                <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
-                <p class="card-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}} - Autore: {{$announcement->user->name ?? ''}}</p>
+                <h5 class="card-title text-sec">Titolo: {{$announcement->title}}</h5>
+                <p class="card-text text-sec">Descrizione: {{$announcement->body}}></p>
+                <p class="card-text text-sec">Prezzo: {{$announcement->price}}€></p>
+                <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success text-sec">Categoria: {{$announcement->category->name}}</a>
+                <p class="card-footer text-sec">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}} - Autore: {{$announcement->user->name ?? ''}}</p>
             </div>
         </div>
     </div>
