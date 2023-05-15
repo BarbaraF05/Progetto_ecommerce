@@ -29,6 +29,13 @@ class PublicController extends Controller
         return view('announcement.index', compact('announcements'));
     }
 
+    public function searchAnnouncements(Request $request)
+    {
+        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(6);
+
+        return view('announcement.index', compact('announcements'));
+    }
+
 
     /* fine rotta ANNUNCI */
 
@@ -38,6 +45,8 @@ class PublicController extends Controller
         return view('categoryShow', compact('category'));
     }
     /* fine rotta CATEGORIA */
+
+    
     
 
     

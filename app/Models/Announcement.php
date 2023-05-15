@@ -4,18 +4,37 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Announcement extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $fillable=[
         'title',
         'body',
         'price'
     ];
+
+    //@return array
+
+    public function toSearchableArray()
+
+    {
+        $category = $this->category;
+        $array = [
+            'id' => $this->id,
+            'title' => $this->title,
+            'body' => $this->body,
+            'price' => $this->price,
+            'category' => $category,
+        ];
+        return $array;
+    }
+
+
 
     public function category(){
         return $this->belongsTo(Category::class);
