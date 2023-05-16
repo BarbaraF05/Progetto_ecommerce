@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-12 p-5">
                 <h1 class="display-1 text-end me-5 text-pr fw-bold">Presto.it</h1>
-                <p class="h2 my-2 fw-bold text-sec text-end">Ecco i nostri annunci più recenti</p>
+                <p class="h2 my-2 fw-bold text-sec text-end">{{__('ui.allAnnouncements')}}</p>
             </div>
         </div>
     </div>
@@ -23,9 +23,9 @@
                       <h5 class="card-title text-sec fw-bold">{{$announcement->title}}</h5>
                       <p class="card-text text-sec">{{$announcement->body}}</p>
                       <hr>
-                      <p class="card-text text-sec">Prezzo: {{$announcement->price}}€</p>
+                      <p class="card-text text-sec">{{__('ui.prezzo')}}: {{$announcement->price}}€</p>
                       <div class="d-grid gap-2 d-md-block">
-                       <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn shadow  text-sec btn-sm">Visualizza</a>
+                       <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn shadow  text-sec btn-sm">{{__('ui.visualizza')}}</a>
                        <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category btn shadow my-3 pt-2 card-link text-sec btn-sm">{{$announcement->category->name}}</a>
                       </div>
                       <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i>  {{$announcement->created_at->format('d/m/Y')}}</p>

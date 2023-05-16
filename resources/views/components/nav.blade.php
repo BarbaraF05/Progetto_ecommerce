@@ -12,11 +12,11 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           
-            <a class="nav-link active text-white text-sec" aria-current="page" href="{{route('welcome')}}">Home</a>
-            <a class="nav-link text-white text-sec" aria-current="page" href="{{route('announcement.index')}}">Annunci</a>
+            <a class="nav-link active text-white text-sec" aria-current="page" href="{{route('welcome')}}">{{__('ui.home')}}</a>
+            <a class="nav-link text-white text-sec" aria-current="page" href="{{route('announcement.index')}}">{{__('ui.annunci')}}</a>
           
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white text-sec" href="" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
+          <a class="nav-link dropdown-toggle text-white text-sec" href="" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.categorie')}}</a>
           
           <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
             @foreach ($categories as $category)
@@ -27,25 +27,25 @@
           </li>
         
           @guest
-            <a class="nav-link text-white text-sec" href="{{route('login')}}">Accedi</a>
-            <a class="nav-link text-white text-sec" href="{{route('register')}}">Registrati</a>
+            <a class="nav-link text-white text-sec" href="{{route('login')}}">{{__('ui.accedi')}}</a>
+            <a class="nav-link text-white text-sec" href="{{route('register')}}">{{__('ui.register')}}</a>
           @else
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white text-sec" href="" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-emoji-sunglasses-fill"></i> {{Auth::user()->name}}</a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-              <li><a class="nav-link text-danger text-sec" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a><form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
+              <li><a class="nav-link text-danger text-sec" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{__('ui.disconetti')}}</a><form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
                   @csrf
                 </form>
               </li>
             </ul>  
           </li> 
-            <a class="nav-link text-white text-sec" href="{{route('announcementCreate')}}">Inserisci annuncio</a> 
+            <a class="nav-link text-white text-sec" href="{{route('announcementCreate')}}">{{__('ui.insannuncio')}}</a> 
             @if(Auth::user()->is_revisor)
               <a href="{{route('revisor.index')}}" class="revisor nav-link btn-sm position-relative" aria-current="page">
-              Zona revisore
+                {{__('ui.zrev')}}
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-sec">
                 {{App\Models\Announcement::toBeRevisionedCount()}}
-                <span class="visually-hidden">Da leggere</span>
+                <span class="visually-hidden">{{__('ui.daleggere')}}</span>
               </span>
               </a>
             @endif  
@@ -54,10 +54,20 @@
           @endguest
           
         </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{__('ui.language')}}
+          </button>
+          <ul class="dropdown-menu">
+            <li><x-_locale lang="it" />IT</li>
+            <li><x-_locale lang="en" />EN</li>
+            <li><x-_locale lang="es" />ES</li>
+          </ul>
+        </div>
           <div class="search ms-auto">
             <form action="{{route('announcements.search')}}" method="GET" class="d-flex" role="search">
               <input name="searched" class="form-control me-2 search-input-nav border-0 rounded-0 text-white" type="search" placeholder="Cerca" aria-label="Search">
-              <button class="btn " type="submit">Cerca</button>
+              <button class="btn " type="submit">{{__('ui.cerca')}}</button>
             </form>
           </div>
         </div> 

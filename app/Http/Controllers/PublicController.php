@@ -46,6 +46,12 @@ class PublicController extends Controller
     }
     /* fine rotta CATEGORIA */
 
+    /* Funzione Lingua */
+    public function setLanguage($lang){
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
+
     
     
 

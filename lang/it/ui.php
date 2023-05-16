@@ -1,0 +1,22 @@
+<?php
+return [
+    'allAnnouncements'=> "Ecco i nostri annunci più recenti",
+    'prezzo'=> 'Prezzo',
+    'visualizza'=> 'Visualizza',
+    'luogo'=> 'Dove siamo',
+    'lavoro'=> 'Vuoi lavorare con noi?',
+    'registrati'=> 'Registrati e clicca qui',
+    'revisore'=> 'Diventa un revisore',
+    'contatto'=> 'Come contattarci',
+    'home'=> 'Home',
+    'annunci'=> 'Annunci',
+    'categorie'=> 'Categorie',
+    'accedi'=> 'Accedi',
+    'register'=> 'Registrati',
+    'disconetti'=> 'Disconetti',
+    'insannuncio'=> 'Inserisci annuncio',
+    'zrev'=> 'Zona revisore',
+    'daleggere'=> 'Da leggere',
+    'language'=> 'Lingue',
+    'cerca'=> 'Cerca',
+];
