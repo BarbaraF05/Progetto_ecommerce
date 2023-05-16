@@ -9,7 +9,7 @@
     @if ($announcement_to_check)
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6 col-12">
                 <div id="showCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item-active">
@@ -32,10 +32,11 @@
                     </button>
                 </div>
             </div>
-            <div class="col-6 my-3">
-                <h5 class="card-title text-sec"><strong>Titolo:</strong> {{$announcement_to_check->title}}</h5>
-                <p class="card-text text-sec mt-3"><strong>Descrizione:</strong> {{$announcement_to_check->body}}></p>
-                <p class="card-footer text-sec"><strong>Pubblicato il:</strong>{{$announcement_to_check->created_at->format(' d/m/Y')}}</p>
+            <div class="col-md-6 col-12 my-3">
+                <h5 class="card-title text-sec fw-bold">{{$announcement_to_check->title}}</h5>
+                <p class="card-text text-sec mt-3">{{$announcement_to_check->body}}></p>
+                <hr class="w-50">
+                <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i>{{$announcement_to_check->created_at->format(' d/m/Y')}}</p>
             
                 <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                 @csrf

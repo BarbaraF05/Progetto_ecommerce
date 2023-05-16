@@ -8,7 +8,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6 col-12">
                 <div id="showCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item-active">
@@ -31,12 +31,12 @@
                     </button>
                 </div>
             </div>
-            <div class="col-6 my-3">
+            <div class="col-md-6 col-12 my-3">
                 <h5 class="card-title text-sec fw-bold">{{$announcement->title}}</h5>
                 <p class="card-text text-sec">{{$announcement->body}}></p>
                 <p class="card-text text-sec"><strong>Prezzo:</strong> {{$announcement->price}}€</p>
-                <hr>
-                <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category my-2 pt-2 card-link btn text-sec btn-sm">Categoria: {{$announcement->category->name}}</a>
+                <hr class="w-50">
+                <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category my-2 pt-2 card-link btn text-sec btn-sm">{{$announcement->category->name}}</a>
                 <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i> {{$announcement->created_at->format('d/m/Y')}} <br> <i class="bi bi-file-person"></i> {{$announcement->user->name ?? ''}}</p>
             </div>
         </div>
