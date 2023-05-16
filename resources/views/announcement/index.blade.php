@@ -15,12 +15,13 @@
                             <div class="card shadow" style="width: 18rem;">
                                 <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                  <h5 class="card-title text-sec">Titolo: {{$announcement->title}}</h5>
-                                  <p class="card-text text-sec">Descrizione: {{$announcement->body}}</p>
+                                  <h5 class="card-title text-sec fw-bold">{{$announcement->title}}</h5>
+                                  <p class="card-text text-sec">{{$announcement->body}}</p>
                                   <p class="card-text text-sec">Prezzo: {{$announcement->price}}€</p>
-                                  <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn text-sec">Visualizza</a>
-                                  <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category btn my-2 pt-2 card-link text-sec">Categoria: {{$announcement->category->name}}</a>
-                                  <p class="card-footer text-sec">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}} - Autore:{{$announcement->user->name ?? ''}}</p>
+                                  <hr>
+                                  <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn text-sec btn-sm">Visualizza</a>
+                                  <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category btn my-2 pt-2 card-link text-sec btn-sm">{{$announcement->category->name}}</a>
+                                  <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i> {{$announcement->created_at->format('d/m/Y')}} - <i class="bi bi-file-person"></i>{{$announcement->user->name ?? ''}}</p>
                                 </div>
                             </div>
                         </div>

@@ -13,10 +13,11 @@
                     <div class="card shadow" style="width: 18rem;">
                         <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title text-sec">Titolo: {{$announcement->title}}</h5>
-                          <p class="card-text text-sec">Descrizione: {{$announcement->body}}</p>
-                          <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn text-sec mb-3">Visualizza</a>
-                          <p class="card-footer text-sec">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}} - Autore: {{$announcement->user->name ?? ''}}</p>
+                          <h5 class="card-title text-sec fw-bold">{{$announcement->title}}</h5>
+                          <p class="card-text text-sec">{{$announcement->body}}</p>
+                          <hr>
+                          <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn text-sec mb-3 btn-sm">Visualizza</a>
+                          <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i> {{$announcement->created_at->format('d/m/Y')}} - <i class="bi bi-file-person"></i> {{$announcement->user->name ?? ''}}</p>
                         </div>
                     </div>
                 </div>

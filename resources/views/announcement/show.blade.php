@@ -32,11 +32,12 @@
                 </div>
             </div>
             <div class="col-6 my-3">
-                <h5 class="card-title text-sec"><strong>Titolo:</strong> {{$announcement->title}}</h5>
-                <p class="card-text text-sec"><strong>Descrizione:</strong> {{$announcement->body}}></p>
-                <p class="card-text text-sec"><strong>Prezzo:</strong> {{$announcement->price}}€></p>
-                <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category my-2 pt-2 card-link btn text-sec">Categoria: {{$announcement->category->name}}</a>
-                <p class="card-footer text-sec"><strong>Pubblicato il:</strong> {{$announcement->created_at->format('d/m/Y')}} - <strong>Autore:</strong> {{$announcement->user->name ?? ''}}</p>
+                <h5 class="card-title text-sec fw-bold">{{$announcement->title}}</h5>
+                <p class="card-text text-sec">{{$announcement->body}}></p>
+                <p class="card-text text-sec"><strong>Prezzo:</strong> {{$announcement->price}}€</p>
+                <hr>
+                <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category my-2 pt-2 card-link btn text-sec btn-sm">Categoria: {{$announcement->category->name}}</a>
+                <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i> {{$announcement->created_at->format('d/m/Y')}} <br> <i class="bi bi-file-person"></i> {{$announcement->user->name ?? ''}}</p>
             </div>
         </div>
     </div>
