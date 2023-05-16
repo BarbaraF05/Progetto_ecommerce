@@ -20,56 +20,223 @@ h1{
     --sec-c: #0000FF;
     --acc-c: #7EC8E3;
   }
-
-  .bg-nav{
-    background-color: var(--main-c);
-
-  }
-
-  .bg-form{
-    background-color:var(--acc-c);
-  }
-
-  .bg-footer{
-    background-color:var(--tot-c);
-  }
-
-  .btn-register{
-    /* font-family: 'Rajdhani', sans-serif; */
-    font-weight: 100;
-    font-size: 20px;
-    color: var(--sec-c);
-    background: none;
-    border: 3px solid var(--sec-c);
-  }
-
-  .btn-visualizza{
-    /* font-family: 'Rajdhani', sans-serif; */
-    font-weight: 100;
-    font-size: 20px;
-    color: var(--tot-c);
-    background: none;
-    border: 3px solid var(--tot-c);
-  }
-
-  .btn-category{
-    /* font-family: 'Rajdhani', sans-serif; */
-    font-weight: 100;
-    font-size: 20px;
-    color: green;
-    background: none;
-    border: 3px solid green;
-  }
-
-  .search-input-nav {
-    background-color: transparent !important; 
-    border-bottom: 2px solid var(--sec-c)  !important;
-  }
-
-  .bg-img{
+  /* IMG SFONDO */
+  .bg-img
+  {
     background-image: url(https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80);
     background-size: cover;
     background-position: center;
-   
-
   }
+  /* NAV */
+  .bg-nav
+  {
+    background-color: var(--main-c);
+  }
+  .revisor
+  {
+    font-size: 15px;
+    color: white;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid rgba(17, 204, 101, 0.829);
+  }
+  .revisor:hover
+  {
+    font-size: 15px;
+    color: white;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid rgba(17, 204, 101, 0.829);
+  }
+  .revisor:active
+  {
+    font-size: 15px;
+    color: rgba(17, 204, 101, 0.829);
+    background: none;
+    border-radius: 5px;
+    border: 2px solid white;
+  }
+  .search-input-nav
+  {
+    background-color: transparent !important; 
+    border-bottom: 2px solid var(--acc-c)  !important;
+  }
+  nav .search form button[type='submit']
+  {
+    font-size: 18px;
+    color: white;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid var(--acc-c);
+  }
+  nav .search form button[type='submit']:active
+  {
+    font-size: 18px;
+    color:var(--acc-c);
+    background: none;
+    border-radius: 5px;
+    border: 2px solid white;
+  }
+  /* CARD */
+  .visualizza
+  {
+    font-size: 20px;
+    color: var(--tot-c);
+    background: none;
+    border-radius: 5px;
+    border: 3px solid var(--tot-c);
+  }
+  .visualizza:hover
+  {
+    font-size: 20px;
+    color: white;
+    background: var(--tot-c);
+    border-radius: 5px;
+    border: 3px solid black;
+  }
+  .category
+  {
+    font-size: 20px;
+    color: rgb(255, 184, 71);
+    background: none;
+    border-radius: 5px;
+    border: 3px solid rgb(255, 184, 71);
+  }
+  .category:hover
+  {
+    font-size: 20px;
+    color: white;
+    background: rgb(255, 184, 71);
+    border-radius: 5px;
+    border: 3px solid black;
+  }
+  .accetta[type='submit']
+  {
+    font-size: 18px;
+    color: black;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid green;
+  }
+  .accetta[type='submit']:hover
+  {
+    font-size: 18px;
+    color:white;
+    background: green;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  .accetta[type='submit']:active
+  {
+    font-size: 18px;
+    color:white;
+    background: rgb(0, 66, 0);
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  .rifiuta[type='submit']
+  {
+    font-size: 18px;
+    color: black;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid red;
+  }
+  .rifiuta[type='submit']:hover
+  {
+    font-size: 18px;
+    color:white;
+    background: red;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  .rifiuta[type='submit']:active
+  {
+    font-size: 18px;
+    color:white;
+    background: rgba(194, 1, 1, 0.998);
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  /* FOOTER */
+  .bg-footer
+  {
+    background-color:var(--tot-c);
+  }
+  .footer
+  {
+    font-size: 15px;
+    color: white;
+    background: none;
+    border-radius: 5px;
+    border: 2px solid rgba(242, 255, 0, 0.829);
+  }
+  .footer:hover
+  {
+    font-size: 15px;
+    color: rgba(242, 255, 0, 0.829);
+    background: none;
+    border-radius: 5px;
+    border: 2px solid white;
+  }
+  /* FORM (REGISTER-LOGIN-CREATE ANNOUNCEMENT) */
+  .form-line
+  {
+    background-color: transparent !important; 
+    border-bottom: 2px solid var(--sec-c)  !important;
+    border-top: 2px solid var(--sec-c)  !important;
+  }
+  .login-line
+  {
+    background-color: transparent !important; 
+    border-bottom: 2px solid var(--sec-c)  !important;
+  }
+  .form[type='submit']
+  {
+    font-size: 20px;
+    color: var(--sec-c);
+    background: none;
+    border-radius: 5px;
+    border: 3px solid var(--sec-c);
+  }
+  .form[type='submit']:hover
+  {
+    font-size: 20px;
+    color:white;
+    background: var(--sec-c);
+    border-radius: 5px;
+    border: 3px solid black;
+  }
+  .form[type='submit']:active
+  {
+    font-size: 20px;
+    color:white;
+    background: var(--sec-c);
+    border-radius: 5px;
+    border: 3px solid black;
+  }
+  .newAnn
+  {
+    font-size: 20px;
+    color: var(--sec-c);
+    background: none;
+    border-radius: 5px;
+    border: 3px solid var(--sec-c);
+  }
+  .newAnn:hover
+  {
+    font-size: 20px;
+    color: white;
+    background: var(--sec-c);
+    border-radius: 5px;
+    border: 3px solid black;
+  }
+
+  
+  
+  
+  
+
+  
+
+  

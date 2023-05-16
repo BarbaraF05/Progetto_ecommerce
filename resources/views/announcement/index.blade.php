@@ -18,8 +18,8 @@
                                   <h5 class="card-title text-sec">Titolo: {{$announcement->title}}</h5>
                                   <p class="card-text text-sec">Descrizione: {{$announcement->body}}</p>
                                   <p class="card-text text-sec">Prezzo: {{$announcement->price}}€</p>
-                                  <a href="{{route('announcement.show', compact('announcement'))}}" class="btn btn-primary shadow text-sec">Visualizza</a>
-                                  <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="btn btn-success shadow my-2 border-top pt-2 border-dark card-link text-sec">Categoria: {{$announcement->category->name}}</a>
+                                  <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn text-sec">Visualizza</a>
+                                  <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category btn my-2 pt-2 card-link text-sec">Categoria: {{$announcement->category->name}}</a>
                                   <p class="card-footer text-sec">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}} - Autore:{{$announcement->user->name ?? ''}}</p>
                                 </div>
                             </div>

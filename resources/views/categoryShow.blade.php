@@ -15,7 +15,7 @@
                         <div class="card-body">
                           <h5 class="card-title text-sec">Titolo: {{$announcement->title}}</h5>
                           <p class="card-text text-sec">Descrizione: {{$announcement->body}}</p>
-                          <a href="" class="btn btn-primary shadow text-sec">Visualizza</a>
+                          <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn text-sec mb-3">Visualizza</a>
                           <p class="card-footer text-sec">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}} - Autore: {{$announcement->user->name ?? ''}}</p>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                 @empty    
                 <div class="col-12 mt-4">
                     <p class="h2 text-sec text-center">Non sono presenti annunci per questa categoria!</p>
-                    <p class="text-sec text-center m-3"><a href="{{route('announcementCreate')}}" class="btn btn-success shadow text-sec">Nuovo Annuncio</a></p>
+                    <p class="text-sec text-center m-3"><a href="{{route('announcementCreate')}}" class="newAnn btn text-sec">Nuovo Annuncio</a></p>
                 </div>
                 @endforelse
             </div>

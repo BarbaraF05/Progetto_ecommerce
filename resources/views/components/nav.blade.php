@@ -30,10 +30,18 @@
             <a class="nav-link text-white text-sec" href="{{route('login')}}">Accedi</a>
             <a class="nav-link text-white text-sec" href="{{route('register')}}">Registrati</a>
           @else
-            <a class="nav-link text-white text-sec" href="#">{{Auth::user()->name}}</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white text-sec" href="" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+              <li><a class="nav-link text-danger text-sec" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a><form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
+                  @csrf
+                </form>
+              </li>
+            </ul>  
+          </li> 
             <a class="nav-link text-white text-sec" href="{{route('announcementCreate')}}">Inserisci annuncio</a> 
             @if(Auth::user()->is_revisor)
-              <a href="{{route('revisor.index')}}" class="nav-link btn btn-outline-success btn-sm position-relative text-white" aria-current="page">
+              <a href="{{route('revisor.index')}}" class="revisor nav-link btn-sm position-relative" aria-current="page">
               Zona revisore
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-sec">
                 {{App\Models\Announcement::toBeRevisionedCount()}}
@@ -41,17 +49,15 @@
               </span>
               </a>
             @endif  
-            <a class="nav-link text-white text-sec" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
-                  @csrf
-                </form>
+            
+                
           @endguest
           
         </div>
-          <div class="ms-auto">
+          <div class="search ms-auto">
             <form action="{{route('announcements.search')}}" method="GET" class="d-flex" role="search">
-              <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input name="searched" class="form-control me-2 search-input-nav border-0 rounded-0 text-white" type="search" placeholder="Cerca" aria-label="Search">
+              <button class="btn " type="submit">Cerca</button>
             </form>
           </div>
         </div> 

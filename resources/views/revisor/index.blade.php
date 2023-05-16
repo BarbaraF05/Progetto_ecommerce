@@ -21,7 +21,6 @@
                         <div class="carousel-item">
                             <img src="https:picsum.photos/id/29/1200/600" class="img-fluid p-3 rounded" alt="...">
                         </div>
-
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#showCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -41,12 +40,12 @@
                 <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                 @csrf
                 @method('PATCH')
-                <button type="submit" class="btn btn-success shadow m-2 text-sec">Accetta</button>
+                <button type="submit" class="accetta btn m-2 text-sec">Accetta</button>
                 </form>
                 <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-danger shadow m-2 text-sec">Rifiuta</button>
+                    <button type="submit" class="rifiuta btn m-2 text-sec">Rifiuta</button>
                     </form>
             </div>  
         </div>

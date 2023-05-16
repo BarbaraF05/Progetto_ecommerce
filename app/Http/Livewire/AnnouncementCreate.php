@@ -15,8 +15,8 @@ class AnnouncementCreate extends Component
     public $category;
 
     protected $rules = [
-        'title' => 'required|min:4',
-        'body' => 'required|min:8',
+        'title' => 'required|min:2',
+        'body' => 'required|min:4',
         'price' => 'required|numeric|digits_between:0,8',
         'category'=>'required'
     ];
@@ -45,7 +45,7 @@ class AnnouncementCreate extends Component
         ]);
             Auth::user()->announcements()->save($announcement);
 
-        session()->flash('message','Annuncio inserito con successo');
+        session()->flash('message','Il tuo annuncio è in revisione');
         $this->cleanForm();
     }
     protected function cleanForm() {
