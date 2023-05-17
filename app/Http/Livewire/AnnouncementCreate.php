@@ -4,9 +4,11 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class AnnouncementCreate extends Component
 {
@@ -50,18 +52,23 @@ class AnnouncementCreate extends Component
         $validatedData = $this->validate();
 
         $category = Category::find($this->category);
-        $announcement = $category->announcements()->create([
+        $this->announcement = $category->announcements()->create([
             'title'=>$this->title,
             'body'=>$this->body,
             'price'=>$this->price
         ]);
         if (count($this->images)){
             foreach ($this->images as $image){
-                $announcement->images()->create(['path'=>$image->store('images','public')]);
+                /* $announcement->images()->create(['path'=>$image->store('images','public')]); */
+                $newFileName="announcements/{$this->announcement->id}";
+                $newImage=$this->announcement->images()->create(['path'=>$image->store('images','public')]);
+
+                dispatch(new ResizeImage($newImage->path,500,600));
             }
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
         
-            Auth::user()->announcements()->save($announcement);
+            Auth::user()->announcements()->save($this->announcement);
 
         session()->flash('message','Il tuo annuncio è in revisione');
         $this->cleanForm();

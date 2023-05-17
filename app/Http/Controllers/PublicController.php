@@ -11,7 +11,7 @@ class PublicController extends Controller
     /* rotta ANNUNCI */
     public function welcome() {
 
-        $announcements = Announcement::where('is_accepted',true)->take(6)->get()->sortByDesc('created_at');
+        $announcements = Announcement::where('is_accepted',true)->orderBy('created_at','DESC')->take(6)->get();
         
         return view('welcome', compact('announcements'));
     }
@@ -25,7 +25,7 @@ class PublicController extends Controller
     }
 
     public function indexAnnouncement(){
-        $announcements=Announcement::where('is_accepted',true)->paginate(6);
+        $announcements=Announcement::where('is_accepted',true)->orderBy('created_at','DESC')->paginate(6);
         return view('announcement.index', compact('announcements'));
     }
 
