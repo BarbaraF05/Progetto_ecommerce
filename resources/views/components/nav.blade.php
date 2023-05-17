@@ -6,8 +6,8 @@
         </a>
        
       </div>
-      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="btn-toogle navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
       </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
@@ -54,13 +54,15 @@
           @endguest
           
         </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="language dropdown ms-3">
+          <button class="btn-language btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('ui.language')}}
           </button>
-          <ul class="dropdown-menu">
+          <ul class="ul-lang dropdown-menu mt-4">
             <li><x-_locale lang="it" />IT</li>
+            <hr class="line-lang">
             <li><x-_locale lang="en" />EN</li>
+            <hr class="line-lang">
             <li><x-_locale lang="es" />ES</li>
           </ul>
         </div>
