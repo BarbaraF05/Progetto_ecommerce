@@ -54,7 +54,7 @@
           @endguest
           
         </div>
-        <div class="language dropdown ms-3">
+        <div class="language dropdown m-3">
           <button class="btn-language btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('ui.language')}}
           </button>

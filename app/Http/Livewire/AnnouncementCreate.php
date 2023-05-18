@@ -61,7 +61,7 @@ class AnnouncementCreate extends Component
             foreach ($this->images as $image){
                 /* $announcement->images()->create(['path'=>$image->store('images','public')]); */
                 $newFileName="announcements/{$this->announcement->id}";
-                $newImage=$this->announcement->images()->create(['path'=>$image->store('images','public')]);
+                $newImage=$this->announcement->images()->create(['path'=>$image->store($newFileName,'public')]);
 
                 dispatch(new ResizeImage($newImage->path,500,600));
             }

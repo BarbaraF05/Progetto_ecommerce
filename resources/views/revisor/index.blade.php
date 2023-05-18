@@ -23,7 +23,7 @@
                        <div class="carousel-inner">
                            @foreach ($announcement_to_check->images as $image)
                              <div class="carousel-item @if($loop->first)active @endif ">
-                                <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" alt="">
+                                <img src="{{$image->getUrl(500,600)}}" class="w-100 p-3 rounded" alt="">
                              </div>
                            @endforeach
                         </div>
@@ -52,7 +52,7 @@
             </div>
             <div class="col-md-6 col-12 my-3">
                 <h5 class="card-title text-sec fw-bold">{{$announcement_to_check->title}}</h5>
-                <p class="card-text text-sec mt-3">{{$announcement_to_check->body}}></p>
+                <p class="card-text text-sec mt-3">{{$announcement_to_check->body}}</p>
                 <p class="card-text text-sec mt-3">Da <span class="card-text text-sec mt-3 fw-bold">{{Auth::user()->name}}</span></p>
                 <hr class="w-50">
                 <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i>{{$announcement_to_check->created_at->format(' d/m/Y')}}</p>

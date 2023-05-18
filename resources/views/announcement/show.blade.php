@@ -15,14 +15,14 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-12">
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-12">
                 <div id="showCarousel" class="carousel slide" data-bs-ride="carousel">
                     @if ($announcement->images)
                     <div class="carousel-inner">
                         @foreach ($announcement->images as $image)
                           <div class="carousel-item @if($loop->first)active @endif">
-                             <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" alt="">
+                             <img src="{{$image->getUrl(500,600)}}" class="w-100 p-3 rounded" alt="">
                           </div>
                         @endforeach
                      </div>
@@ -40,21 +40,21 @@
                  </div>
                  @endif
                     <button class="carousel-control-prev" type="button" data-bs-target="#showCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="btn-carousel carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#showCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="btn-carousel carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
-            <div class="col-md-6 col-12 my-3">
+            <div class="info-text col-md-5 col-12 my-5 d-flex flex-column align-items-center justify-content-center">
                 <h5 class="card-title text-sec fw-bold">{{$announcement->title}}</h5>
-                <p class="card-text text-sec">{{$announcement->body}}</p>
+                <p class="card-text text-sec p-3 mx-auto">{{$announcement->body}}</p>
                 <p class="card-text text-sec"><strong>Prezzo:</strong> {{$announcement->price}}€</p>
                 <hr class="w-50">
-                <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category my-2 pt-2 card-link btn text-sec btn-sm">{{$announcement->category->name}}</a>
+                <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category my-2  card-link btn text-sec btn-sm">{{$announcement->category->name}}</a>
                 <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i> {{$announcement->created_at->format('d/m/Y')}} <br> <i class="bi bi-file-person"></i> {{$announcement->user->name ?? ''}}</p>
             </div>
         </div>

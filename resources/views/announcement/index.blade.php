@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid shadow-lg p-3 my-5 bg-body-tertiary rounded">
+    <div class=" container-fluid shadow-lg p-3 my-5 bg-body-tertiary rounded">
         <div class="row">
             <div class="col-12 p-5">
                 <p class="h2 my-2 fw-bold text-center text-pr">Ecco i nostri annunci</p>
@@ -40,4 +40,5 @@
             </div>
         </div>
     </div>
+
 </x-layout>
