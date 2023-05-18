@@ -35,12 +35,22 @@
                              <div class="carousel-item @if($loop->first)active @endif ">
                                 <img src="{{$image->getUrl(500,600)}}" class="w-100 p-3 rounded" alt="">
                                 <div>
+                                    <h5 class="mt-3">Tags</h5>
+                                    <div class="p-2">
+                                        @if ($image->labels)
+                                            @foreach ($image->labels as $label)
+                                                <p class="d-inline">{{$label}}</p>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+                                <div>
                                     <h5 class="tc-accent">Revisione Immagini</h5>
                                     <p>Adulti: <span class="{{$image->adult}}"> </span></p>
                                     <p>Satira: <span class="{{$image->spoof}}"> </span></p>
                                     <p>Medicina: <span class="{{$image->medical}}"> </span></p>
                                     <p>Violenza: <span class="{{$image->violence}}"> </span></p>
-                                    <p>Contenuto ammiccante: <span class="{{$image->adult}}"> </span></p>
+                                    <p>Contenuto ammiccante: <span class="{{$image->racy}}"> </span></p>
                                 </div>
                              </div>
                            @endforeach

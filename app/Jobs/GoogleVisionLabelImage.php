@@ -3,15 +3,15 @@
 namespace App\Jobs;
 
 use App\Models\Image;
-use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
-class GoogleVisionSafeSearch implements ShouldQueue
+class GoogleVisionLabelImage implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -40,29 +40,19 @@ class GoogleVisionSafeSearch implements ShouldQueue
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
 
         $imageAnnotator = new ImageAnnotatorClient();
-        $response = $imageAnnotator->safeSearchDetection($image);
+        $response = $imageAnnotator->labelDetection($image);
+        $labels=$response->getLabelAnnotations();
+
+        if($labels){
+            $result=[];
+            foreach ($labels as $label){
+                $result[]=$label->getDescription();
+            }
+
+            $i->labels=$result;
+            $i->save();
+        }
+
         $imageAnnotator->close();
-
-        $safe = $response->getSafeSearchAnnotation();
-
-        $adult = $safe->getAdult();
-        $medical = $safe->getMedical();
-        $spoof = $safe->getSpoof();
-        $violence = $safe->getViolence();
-        $racy = $safe->getRacy();
-        
-        $likelihoodName = [
-            'text-secondary bi bi-circle-fill', 'text-success bi bi-circle-fill', 'text-success bi bi-circle-fill', 'text-warning bi bi-circle-fill',
-            'text-warning bi bi-circle-fill', 'text-danger bi bi-circle-fill'
-        ];
-
-        $i->adult = $likelihoodName[$adult];
-        $i->medical = $likelihoodName[$medical];
-        $i->spoof = $likelihoodName[$spoof];
-        $i->violence = $likelihoodName[$violence];
-        $i->racy = $likelihoodName[$racy];
-
-        $i->save();
-
     }
 }
