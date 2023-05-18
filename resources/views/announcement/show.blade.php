@@ -1,8 +1,16 @@
 <x-layout>
-    <div class="container-fluid p-5 shadow mb-4">
+    {{-- <div class="container-fluid p-5 shadow mb-4">
         <div class="row">
             <div class="col-12 text-light p-5">
                 <h1 class="display-2 text-center">Annuncio {{$announcement->title}}</h1>
+            </div>
+        </div>
+    </div> --}}
+
+    <div class="container-fluid shadow-lg p-3 my-5 bg-body-tertiary rounded">
+        <div class="row">
+            <div class="col-12 p-5">
+                <p class="h2 my-2 fw-bold text-center text-pr">Annuncio: {{$announcement->title}}</p>
             </div>
         </div>
     </div>
@@ -43,7 +51,7 @@
             </div>
             <div class="col-md-6 col-12 my-3">
                 <h5 class="card-title text-sec fw-bold">{{$announcement->title}}</h5>
-                <p class="card-text text-sec">{{$announcement->body}}></p>
+                <p class="card-text text-sec">{{$announcement->body}}</p>
                 <p class="card-text text-sec"><strong>Prezzo:</strong> {{$announcement->price}}€</p>
                 <hr class="w-50">
                 <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category my-2 pt-2 card-link btn text-sec btn-sm">{{$announcement->category->name}}</a>

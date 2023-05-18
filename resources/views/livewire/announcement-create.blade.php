@@ -9,23 +9,29 @@
         <div class="my-3 w-50 mx-auto">
             <label class="line-title form-label fw-bold text-sec">Titolo</label>
             <input type="text" class="form-control rounded-0 form-line border-0 @error('title') is-invalid @enderror" wire:model="title">
-            @error ('title') {{$message}} @enderror
+            @error ('title')
+                <p class="text-danger mt-2">{{$message}}</p>
+            @enderror
         </div>
         <div class="my-3 w-50 mx-auto">
             <label class="line-title form-label fw-bold text-sec ">Descrizione</label>
-            <textarea wire:model="body" type="text" col="30" rows="5" class="form-control rounded-0 form-line border-0 @error('body') is-invalid @enderror"></textarea>
-            @error ('body') {{$message}} @enderror
+            <textarea wire:model="body" type="text" col="30" rows="3" class="form-control rounded-0 form-line border-0 @error('body') is-invalid @enderror"></textarea>
+            @error ('body')
+                <p class="text-danger mt-2">{{$message}}</p>
+            @enderror
             
         </div>
         <div class="my-3 w-50 mx-auto">
             <label class="line-title form-label fw-bold text-sec">Prezzo</label>
             <input type="decimal" class="form-control rounded-0 form-line border-0 @error('price') is-invalid @enderror" wire:model="price">
-            @error ('price') {{$message}} @enderror
+            @error ('price')
+                <p class="text-danger mt-2">{{$message}}</p>
+            @enderror
             {{-- @error('price') <span class="error">{{ $message }}</span> @enderror --}}
         </div>
         <div class="my-3 w-50 mx-auto">
             <label for="category" class="line-title mb-2 fw-bold text-sec">Categoria</label>
-            <select wire:model.defer="category" id="category" class="form-control rounded-0 form-line border-0">
+            <select wire:model.defer="category" id="category" class="form-control rounded-0 form-line border-0 @error('category') is-invalid @enderror">
                 <option value="">Scegli la categoria</option>
                 @foreach ($categories as $category)
 
@@ -33,12 +39,14 @@
                     
                 @endforeach
             </select>
-
+            @error('category')
+                <p class="text-danger mt-2">{{$message}}</p>
+            @enderror
         </div>
 
         <div class="my-3 w-50 mx-auto">
             <label for="category" class="line-title mb-2 fw-bold text-sec">Inserisci immagine</label>
-            <input wire:model="temporary_images" type="file" name="images" multiple class="form-control rounded-0 form-line border-0 shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img"/>
+            <input wire:model="temporary_images" type="file" name="images" multiple class="form-control bg-transparent rounded-0 form-line border-0  @error('temporary_images.*') is-invalid @enderror" placeholder="Img"/>
             @error('temporary_images.*')
                 <p class="text-danger mt-2">{{$message}}</p>
             @enderror

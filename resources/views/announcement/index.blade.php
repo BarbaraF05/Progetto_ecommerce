@@ -19,8 +19,8 @@
                                   <p class="card-text text-sec">{{$announcement->body}}</p>
                                   <p class="card-text text-sec">Prezzo: {{$announcement->price}}€</p>
                                   <hr>
-                                  <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn text-sec btn-sm">Visualizza</a>
-                                  <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category btn my-2 pt-2 card-link text-sec btn-sm">{{$announcement->category->name}}</a>
+                                  <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn text-sec btn-sm d-grid">Visualizza</a>
+                                  <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category btn my-3 card-link text-sec btn-sm d-grid">{{$announcement->category->name}}</a>
                                   <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i> {{$announcement->created_at->format('d/m/Y')}} - <i class="bi bi-file-person"></i>{{$announcement->user->name ?? ''}}</p>
                                 </div>
                             </div>

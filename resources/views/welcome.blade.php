@@ -25,8 +25,8 @@
                       <hr>
                       <p class="card-text text-sec">{{__('ui.prezzo')}}: {{$announcement->price}}€</p>
                       <div class="d-grid gap-2 d-md-block">
-                       <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn shadow  text-sec btn-sm">{{__('ui.visualizza')}}</a>
-                       <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category btn shadow my-3 pt-2 card-link text-sec btn-sm">{{$announcement->category->name}}</a>
+                       <a href="{{route('announcement.show', compact('announcement'))}}" class="visualizza btn shadow my-3 text-sec btn-sm d-grid">{{__('ui.visualizza')}}</a>
+                       <a href="{{route('categoryShow', ['category'=>$announcement->category])}}" class="category btn shadow my-3 card-link text-sec btn-sm d-grid ">{{$announcement->category->name}}</a>
                       </div>
                       <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i>  {{$announcement->created_at->format('d/m/Y')}}</p>
                     </div>
