@@ -17,6 +17,16 @@
     @if ($announcement_to_check)
     <div class="container">
         <div class="row">
+            <div class="col-md-3">
+                {{--<div class="card-body">
+                    <h5 class="tc-accent">Revisione Immagini</h5>
+                    <p>Adulti: <span class="{{$image->adult}}"> </span></p>
+                    <p>Satira: <span class="{{$image->spoof}}"> </span></p>
+                    <p>Medicina: <span class="{{$image->medical}}"> </span></p>
+                    <p>Violenza: <span class="{{$image->violence}}"> </span></p>
+                    <p>Contenuto ammiccante: <span class="{{$image->adult}}"> </span></p>
+                </div>--}}
+            </div>
             <div class="col-md-6 col-12">
                 <div id="showCarousel" class="carousel slide justify-content-center" data-bs-ride="carousel">
                     @if ($announcement_to_check->images)
@@ -24,6 +34,14 @@
                            @foreach ($announcement_to_check->images as $image)
                              <div class="carousel-item @if($loop->first)active @endif ">
                                 <img src="{{$image->getUrl(500,600)}}" class="w-100 p-3 rounded" alt="">
+                                <div>
+                                    <h5 class="tc-accent">Revisione Immagini</h5>
+                                    <p>Adulti: <span class="{{$image->adult}}"> </span></p>
+                                    <p>Satira: <span class="{{$image->spoof}}"> </span></p>
+                                    <p>Medicina: <span class="{{$image->medical}}"> </span></p>
+                                    <p>Violenza: <span class="{{$image->violence}}"> </span></p>
+                                    <p>Contenuto ammiccante: <span class="{{$image->adult}}"> </span></p>
+                                </div>
                              </div>
                            @endforeach
                         </div>
