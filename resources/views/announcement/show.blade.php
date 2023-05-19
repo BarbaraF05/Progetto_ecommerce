@@ -10,7 +10,7 @@
     <div class="container-fluid shadow-lg p-3 my-5 bg-body-tertiary rounded">
         <div class="row">
             <div class="col-12 p-5">
-                <p class="h2 my-2 fw-bold text-center text-pr">Annuncio: {{$announcement->title}}</p>
+                <p class="h2 my-2 fw-bold text-center text-pr display-5">Annuncio: {{$announcement->title}}</p>
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
                     </button>
                 </div>
             </div>
-            <div class="info-text col-md-5 col-12 my-5 d-flex flex-column align-items-center justify-content-center">
+            <div class="info-text col-md-6 col-12 my-5 d-flex flex-column align-items-center justify-content-center">
                 <h5 class="card-title text-sec fw-bold">{{$announcement->title}}</h5>
                 <p class="card-text text-sec p-3 mx-auto">{{$announcement->body}}</p>
                 <p class="card-text text-sec"><strong>Prezzo:</strong> {{$announcement->price}}€</p>

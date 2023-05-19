@@ -2,7 +2,7 @@
     <div class=" container-fluid shadow-lg p-3 my-5 bg-body-tertiary rounded">
         <div class="row">
             <div class="col-12 p-5">
-                <p class="h2 my-2 fw-bold text-center text-pr">Ecco i nostri annunci</p>
+                <p class="h2 my-2 fw-bold text-center text-pr display-5">Ecco i nostri annunci</p>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
                         @empty
                         <div class="col-12">
                             <div class="alert alert-warning py-3 shadow">
-                                <p class="lead text-sec">
+                                <p class="lead text-sec display-5">
                                     Non ci sono annunci per questa ricerca. Prova a cambiarla!
                                 </p>
                             </div>

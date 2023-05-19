@@ -332,7 +332,7 @@ h1{
   .btn-carousel  
   {
     border-radius: 50%;
-    background-color: var(--sec-c);
+    background-color: var(--main-c);
   }
   .btn-carousel:active  
   {
@@ -342,7 +342,11 @@ h1{
   .info-text
   {
     width: 600px;
-    
+  }
+  .border-revisor
+  {
+    font-family: 'Lato', sans-serif;
+    border: 2px solid var(--acc-c);
   }
 
   
