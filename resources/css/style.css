@@ -346,8 +346,29 @@ h1{
   .border-revisor
   {
     font-family: 'Lato', sans-serif;
-    border: 2px solid var(--acc-c);
   }
+  .border-revisor-tags
+  {
+    border-top: 1px solid var(--sec-c);
+  }
+  .border-revisor-img
+  {
+    border-bottom: 1px solid var(--sec-c);
+  }
+  .hr-revisor
+  {
+    color: var(--sec-c);
+    opacity: 100%;
+  }
+  #portamiSu 
+  {
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    cursor: pointer;
+    color: var(--acc-c);
+  }
+  
 
   
   

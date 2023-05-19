@@ -15,18 +15,8 @@
         </div>
     </div>
     @if ($announcement_to_check)
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
-            {{-- <div class="col-md-3">
-                <div class="card-body">
-                    <h5 class="tc-accent">Revisione Immagini</h5>
-                    <p>Adulti: <span class="{{$image->adult}}"> </span></p>
-                    <p>Satira: <span class="{{$image->spoof}}"> </span></p>
-                    <p>Medicina: <span class="{{$image->medical}}"> </span></p>
-                    <p>Violenza: <span class="{{$image->violence}}"> </span></p>
-                    <p>Contenuto ammiccante: <span class="{{$image->adult}}"> </span></p>
-                </div>
-            </div> --}}
             <div class="col-md-6 col-12">
                 <div id="showCarousel" class="carousel slide justify-content-center" data-bs-ride="carousel">
                     @if ($announcement_to_check->images)
@@ -34,7 +24,7 @@
                            @foreach ($announcement_to_check->images as $image)
                              <div class="carousel-item @if($loop->first)active @endif ">
                                 <img src="{{$image->getUrl(500,600)}}" class="w-100 p-3 rounded" alt="">
-                                <div class="border-revisor row mt-4">
+                                {{-- <div class="border-revisor row mt-4">
                                     <div class="col-md-6 col-12 text-center">
                                         <h5>Tags</h5>
                                         <div class="p-2">
@@ -53,7 +43,7 @@
                                         <p>Violenza: <span class="{{$image->violence}}"> </span></p>
                                         <p>Contenuto ammiccante: <span class="{{$image->racy}}"> </span></p>
                                     </div>
-                                </div>
+                                </div> --}}
                              </div>
                            @endforeach
                         </div>
@@ -80,11 +70,11 @@
                     </button>
                 </div>
             </div>
-            <div class="info-text col-md-6 col-12 my-5 d-flex flex-column align-items-center">
+            <div class="info-text col-md-6 col-12 my-4 d-flex flex-column align-items-center">
                 <h4 class="card-title text-sec fw-bold">{{$announcement_to_check->title}}</h4>
                 <p class="card-text text-sec mt-3">{{$announcement_to_check->body}}</p>
                 <p class="card-text text-sec mt-3">Da <span class="card-text text-sec mt-3 fw-bold">{{Auth::user()->name}}</span></p>
-                <hr class="w-50">
+                <hr class="hr-revisor w-50">
                 <p class="card-footer text-sec"><i class="bi bi-calendar2-event"></i>{{$announcement_to_check->created_at->format(' d/m/Y')}}</p>
             
                 <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
@@ -97,7 +87,29 @@
                     @method('PATCH')
                     <button type="submit" class="rifiuta btn m-2 text-sec">Rifiuta</button>
                     </form>
-            </div>  
+                    @if ($announcement_to_check->images)
+                       <div class="border-revisor row mt-5">
+                            <div class="border-revisor-tags col-md-6 col-12 text-center mt-2">
+                                <h5>Tags</h5>
+                                <div class="p-2">
+                                @if ($image->labels)
+                                    @foreach ($image->labels as $label)
+                                        <p class="d-inline">{{$label}}</p>
+                                     @endforeach
+                                @endif
+                                </div>
+                            </div>
+                            <div class="border-revisor-img col-md-6 col-12 text-center mt-2">
+                                <h5>Revisione Immagini</h5>
+                                <p>Adulti: <span class="{{$image->adult}}"> </span></p>
+                                <p>Satira: <span class="{{$image->spoof}}"> </span></p>
+                                <p>Medicina: <span class="{{$image->medical}}"> </span></p>
+                                <p>Violenza: <span class="{{$image->violence}}"> </span></p>
+                                <p>Contenuto ammiccante: <span class="{{$image->racy}}"> </span></p>
+                            </div>
+                        </div>
+                    @endif            
+                </div>  
         </div>
     </div>
     @endif

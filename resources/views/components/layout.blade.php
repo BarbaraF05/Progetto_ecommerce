@@ -12,6 +12,7 @@
     <x-nav/>
     <div class="min-vh-100 bg-page">
         {{$slot}}
+        <x-button/>
     </div>
     <x-footer/>
 
