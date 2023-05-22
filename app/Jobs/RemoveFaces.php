@@ -16,6 +16,7 @@ use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 class RemoveFaces implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     private $announcement_image_id;
 
     /**
@@ -23,7 +24,7 @@ class RemoveFaces implements ShouldQueue
      */
     public function __construct($announcement_image_id)
     {
-        $this->$announcement_image_id = $announcement_image_id; 
+        $this->announcement_image_id = $announcement_image_id; 
     }
 
     /**
@@ -31,6 +32,7 @@ class RemoveFaces implements ShouldQueue
      */
     public function handle(): void
     {
+        
         $i = Image::find($this->announcement_image_id);
         if (!$i) {
             return;
@@ -58,8 +60,8 @@ class RemoveFaces implements ShouldQueue
 
             $image = SpatieImage::load($srcPath);
 
-            $image-> watermark(base_path('resources/img/smile.png'))
-            ->watermarkPosition('top-left')
+            $image->watermark(base_path('resources/img/smile.png'))
+            ->watermarkPosition(Manipulations::POSITION_TOP_LEFT)
             ->watermarkPadding($bounds[0][0], $bounds[0][1])
             ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
             ->watermarkHeight($h, Manipulations::UNIT_PIXELS)

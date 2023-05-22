@@ -42,6 +42,8 @@ class PublicController extends Controller
     /* rotta CATEGORIA */
 
     public function categoryShow(Category $category){
+
+        /* dd($category->announcements()->orderBy('created_at','DESC')->get()); */
         return view('categoryShow', compact('category'));
     }
     /* fine rotta CATEGORIA */
